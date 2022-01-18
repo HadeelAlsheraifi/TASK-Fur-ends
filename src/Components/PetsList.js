@@ -6,11 +6,7 @@ export default function PetsList(props) {
   const [query, setQuery] = useState("");
 
   const pets = props.pets
-    .filter(
-      (pet) =>
-        pet.name.toLowerCase().includes(query.toLowerCase()) &&
-        pet.type.includes(type)
-    )
+    .filter((pet) => pet.name.toLowerCase().includes(query.toLowerCase()))
     .map((pet) => <PetItem key={pet.id} pet={pet} />);
 
   const onChangeType = (e) => {
@@ -57,3 +53,6 @@ export default function PetsList(props) {
     </section>
   );
 }
+
+// &&
+// pet.type.includes(type)
